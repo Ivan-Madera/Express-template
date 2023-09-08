@@ -21,34 +21,34 @@ router.get('/diaries', [], diaries)
 /**
  * @swagger
  * /api/diaries:
- *  post:
- *    tags: [Diaries]
- *    summary: Crea una nuevo diario de viaje
- *    requestBody:
- *      required: true
- *      content:
- *        application/json:
- *          schema:
- *            type: object
- *            properties:
- *              date:
- *                type: string
- *              weather:
- *                type: string
- *              visibility:
- *                type: string
- *              comment:
- *                type: string
- *            required:
- *              - date
- *              - weather
- *              - visibility
- *              - comment
- *    responses:
- *      200:
- *        description: Creacion de la entrada exitosa
- *      500:
- *        description: Mensaje de error
+ *   post:
+ *     tags: [Diaries]
+ *     summary: Crea una nuevo diario de viaje
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               date:
+ *                 type: string
+ *               weather:
+ *                 type: string
+ *               visibility:
+ *                 type: string
+ *               comment:
+ *                 type: string
+ *             required:
+ *               - date
+ *               - weather
+ *               - visibility
+ *               - comment
+ *     responses:
+ *       200:
+ *         description: Creacion de la entrada exitosa
+ *       500:
+ *         description: Mensaje de error
  */
 router.post('/diaries', [...diariesCreateValidator], diariesCreate)
 

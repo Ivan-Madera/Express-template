@@ -29,6 +29,7 @@ provider:
     DB_PASSWORD: ${param:DB_PASSWORD, ''}
     DB_HOST: ${param:DB_HOST, ''}
     DB_PORT: ${param:DB_PORT, ''}
+    TOKEN: ${param:TOKEN, ''}
 custom:
   serverless-offline:
     functionCleanupIdleTimeSeconds: 5
