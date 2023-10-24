@@ -10,8 +10,8 @@ export const ErrorObject = (error: any, code: number): IErrorObject => ({
   code
 })
 
-export const SuccessObject = (result: any, code: number): ISuccessObject => ({
-  data: result,
+export const SuccessObject = (data: any, code: number): ISuccessObject => ({
+  data,
   code
 })
 
