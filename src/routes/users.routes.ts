@@ -18,6 +18,10 @@ const router = Router()
  *     responses:
  *       200:
  *         description: Éxito. Devuelve la información de los usuarios.
+ *       400:
+ *          description: Ocurrio un error durante el proceso.
+ *       401:
+ *         description: No autorizado.
  *       500:
  *         description: Error interno del servidor.
  */
