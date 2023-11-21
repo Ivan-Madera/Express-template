@@ -17,7 +17,7 @@ const router = Router()
  *        type: string
  *     responses:
  *       200:
- *         description: Éxito. Devuelve la información de los usuarios.
+ *         description: Request exitoso.
  *       400:
  *          description: Ocurrio un error durante el proceso.
  *       401:
