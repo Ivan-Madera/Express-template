@@ -18,7 +18,7 @@ interface UserAttributes {
 interface UserCreationAttributes
   extends Optional<UserAttributes, 'id_usuario'> {}
 
-interface UserInstance
+export interface UserInstance
   extends Model<UserAttributes, UserCreationAttributes>,
     UserAttributes {}
 
