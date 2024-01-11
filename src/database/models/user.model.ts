@@ -15,8 +15,8 @@ interface UserAttributes {
   estatus: number
 }
 
-interface UserCreationAttributes
-  extends Optional<UserAttributes, 'id_usuario'> {}
+export interface UserCreationAttributes
+  extends Optional<UserAttributes, 'id_usuario' | 'estatus'> {}
 
 export interface UserInstance
   extends Model<UserAttributes, UserCreationAttributes>,
@@ -26,9 +26,10 @@ const User = sequelize.define<UserInstance>(
   'db_usuarios',
   {
     id_usuario: {
-      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      type: DataTypes.INTEGER
     },
     nombres: {
       type: DataTypes.STRING
