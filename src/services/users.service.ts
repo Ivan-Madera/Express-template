@@ -1,4 +1,8 @@
-import { sequelize } from '../database/config'
+import {
+  commitTrasaction,
+  manageTransaction,
+  rollbackTrasaction
+} from '../database/transactions'
 import {
   type IResponseMessage,
   type IErrorObject,
@@ -36,16 +40,16 @@ export const createUserService = async (
   userObj: IUserObj
 ): Promise<ISuccessObject | IErrorObject> => {
   let status = Codes.errorServer
-  const t = await sequelize.transaction()
+  const t = await manageTransaction()
 
   try {
     const findCreate = await createUser(userObj, t)
 
-    await t.commit()
+    await commitTrasaction(t)
     status = Codes.success
     return SuccessObject(findCreate, status)
   } catch (error) {
-    await t.rollback()
+    await rollbackTrasaction(t, 'createUserService')
     return ErrorObject(error, status)
   }
 }
@@ -56,7 +60,7 @@ export const updateUserService = async (
 ): Promise<IResponseMessage | IErrorObject> => {
   let status = Codes.errorServer
   const message = 'Usuario actualizado con exito'
-  const t = await sequelize.transaction()
+  const t = await manageTransaction()
 
   try {
     await updateUser(
@@ -69,11 +73,11 @@ export const updateUserService = async (
       }
     )
 
-    await t.commit()
+    await commitTrasaction(t)
     status = Codes.success
     return ResponseMessage(message, status)
   } catch (error) {
-    await t.rollback()
+    await rollbackTrasaction(t, 'updateUserService')
     return ErrorObject(error, status)
   }
 }

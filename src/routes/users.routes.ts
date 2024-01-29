@@ -36,7 +36,7 @@ router.get('/users', [checkAuth], getUsers)
  * /api/user:
  *   post:
  *     tags: [Users]
- *     summary: Crea unnuevo usario
+ *     summary: Crea un nuevo usuario
  *     parameters:
  *      - in: header
  *        name: token
@@ -94,7 +94,7 @@ router.post('/user', [checkAuth], createUser)
  * /api/user:
  *   patch:
  *     tags: [Users]
- *     summary: Crea unnuevo usario
+ *     summary: Actualiza un usuario existente
  *     parameters:
  *      - in: header
  *        name: token

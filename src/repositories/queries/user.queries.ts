@@ -1,3 +1,4 @@
+import { type Attributes, type FindOptions } from 'sequelize'
 import User, { type UserInstance } from '../../database/models/user.model'
 
 export const findOneUser = async (
@@ -12,6 +13,8 @@ export const findOneUser = async (
   })
 }
 
-export const findAllUsers = async (): Promise<UserInstance[]> => {
-  return await User.findAll()
+export const findAllUsers = async (
+  options?: FindOptions<Attributes<UserInstance>>
+): Promise<UserInstance[]> => {
+  return await User.findAll(options)
 }

@@ -35,6 +35,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'warn',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
     // '@typescript-eslint/naming-convention': 'off',
     // '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-misused-promises': [
