@@ -46,8 +46,8 @@ router.get('/accesstoken', [], getAccessToken)
  *     description: Obtiene la información relevante de los usuarios.
  *     parameters:
  *      - in: header
- *        name: token
- *        description: token de autenticacion
+ *        name: Authorization
+ *        description: Bearer token de autenticacion
  *        type: string
  *     responses:
  *       200:
