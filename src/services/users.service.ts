@@ -1,3 +1,4 @@
+import env from './../config/callenv'
 import {
   commitTrasaction,
   manageTransaction,
@@ -20,6 +21,26 @@ import {
   ResponseMessage,
   SuccessObject
 } from '../utils/JsonResponses'
+import { sign } from 'jsonwebtoken'
+
+export const getAccessTokenService = async (): Promise<
+  ISuccessObject | IErrorObject
+> => {
+  let status = Codes.errorServer
+
+  try {
+    const secret = env.SECRET_KEY as string
+    const uid = new Date().getTime()
+
+    const token = sign({ uid }, secret, { expiresIn: '1h' })
+
+    const data = { token }
+    status = Codes.success
+    return SuccessObject(data, status)
+  } catch (error) {
+    return ErrorObject(error, status)
+  }
+}
 
 export const getUsersService = async (): Promise<
   ISuccessObject | IErrorObject

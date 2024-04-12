@@ -1,11 +1,41 @@
 import { Router } from 'express'
 import {
   createUser,
+  getAccessToken,
   getUsers,
   updateUser
 } from '../controllers/users.controller'
-import { checkAuth } from '../middlewares/authentication'
+import { checkAuth, checkBearer } from '../middlewares/authentication'
 const router = Router()
+
+/**
+ * @swagger
+ * components:
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
+ */
+
+/**
+ * @swagger
+ * /api/accesstoken:
+ *   get:
+ *     tags: [Users]
+ *     summary: Obtener el accesstoken
+ *     description: Obtiene el accesstoken para los endpoint.
+ *     responses:
+ *       200:
+ *         description: Request exitoso.
+ *       400:
+ *          description: Ocurrio un error durante el proceso.
+ *       401:
+ *         description: No autorizado.
+ *       500:
+ *         description: Error interno del servidor.
+ */
+router.get('/accesstoken', [], getAccessToken)
 
 /**
  * @swagger
@@ -29,7 +59,7 @@ const router = Router()
  *       500:
  *         description: Error interno del servidor.
  */
-router.get('/users', [checkAuth], getUsers)
+router.get('/users', [checkBearer], getUsers)
 
 /**
  * @swagger
