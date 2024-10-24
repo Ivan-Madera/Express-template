@@ -5,7 +5,7 @@ export const manageTransaction = async (): Promise<Transaction> => {
   return await sequelize.transaction()
 }
 
-export const commitTrasaction = async (
+export const commitTransaction = async (
   transaction: Transaction
 ): Promise<void> => {
   if (transaction) {
@@ -13,7 +13,7 @@ export const commitTrasaction = async (
   }
 }
 
-export const rollbackTrasaction = async (
+export const rollbackTransaction = async (
   transaction: Transaction,
   servicio: string
 ): Promise<void> => {

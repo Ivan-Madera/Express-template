@@ -12,6 +12,11 @@ interface IEnv {
   DB_PORT: number
   TOKEN: string
   SECRET_KEY: string
+  MAX_CONNECTION: number
+  MIN_CONNECTION: number
+  DB_ACQUIRE: number
+  DB_IDLE: number
+  DB_EVICT: number
 }
 
 const schema = Joi.object({
@@ -23,7 +28,12 @@ const schema = Joi.object({
   DB_HOST: Joi.string().required(),
   DB_PORT: Joi.number().required(),
   TOKEN: Joi.string().required(),
-  SECRET_KEY: Joi.string().required()
+  SECRET_KEY: Joi.string().required(),
+  MAX_CONNECTION: Joi.number().empty('').default(72),
+  MIN_CONNECTION: Joi.number().empty('').default(0),
+  DB_ACQUIRE: Joi.number().empty('').default(30000),
+  DB_IDLE: Joi.number().empty('').default(5000),
+  DB_EVICT: Joi.number().empty('').default(5000)
 })
   .unknown()
   .required()

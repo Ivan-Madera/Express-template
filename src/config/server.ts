@@ -8,6 +8,7 @@ import { options } from './swagger'
 import { sequelize } from '../database/config'
 import helmet from 'helmet'
 import env from './callenv'
+import { LogInfo } from '../utils/Loggers'
 
 class Server {
   public app: Application
@@ -52,7 +53,7 @@ class Server {
 
   listen(): void {
     this.app.listen(env.PORT, () => {
-      console.log(`Server listening on http://127.0.0.1:${env.PORT}/docs`)
+      LogInfo(`Server listening on http://127.0.0.1:${env.PORT}/docs`)
     })
   }
 

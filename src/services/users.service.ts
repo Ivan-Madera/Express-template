@@ -1,8 +1,8 @@
 import env from '../config/callenv'
 import {
-  commitTrasaction,
+  commitTransaction,
   manageTransaction,
-  rollbackTrasaction
+  rollbackTransaction
 } from '../database/transactions'
 import {
   type IResponseMessage,
@@ -66,11 +66,11 @@ export const createUserService = async (
   try {
     const findCreate = await createUser(userObj, t)
 
-    await commitTrasaction(t)
+    await commitTransaction(t)
     status = Codes.success
     return SuccessObject(findCreate, status)
   } catch (error) {
-    await rollbackTrasaction(t, 'createUserService')
+    await rollbackTransaction(t, 'createUserService')
     return ErrorObject(error, status)
   }
 }
@@ -94,11 +94,11 @@ export const updateUserService = async (
       }
     )
 
-    await commitTrasaction(t)
+    await commitTransaction(t)
     status = Codes.success
     return ResponseMessage(message, status)
   } catch (error) {
-    await rollbackTrasaction(t, 'updateUserService')
+    await rollbackTransaction(t, 'updateUserService')
     return ErrorObject(error, status)
   }
 }
