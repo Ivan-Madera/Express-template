@@ -42,6 +42,8 @@ router.get('/accesstoken', [], getAccessToken)
  * /api/users:
  *   get:
  *     tags: [Users]
+ *     security:
+ *     - bearerAuth: []
  *     summary: Obtener informacion de los usuarios
  *     description: Obtiene la información relevante de los usuarios.
  *     parameters:

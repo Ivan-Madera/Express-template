@@ -1,4 +1,3 @@
-import serverless from 'serverless-http'
 import { server } from './src/config/server'
 server.listen()
-export const handler = serverless(server.app)
+export const handler = server.app
