@@ -10,10 +10,7 @@ export const options = {
     },
     servers: [
       {
-        url:
-          env.ENV === 'production'
-            ? ''
-            : `http://127.0.0.1:${env.PORT as string}`
+        url: env.ENV === 'production' ? '' : `http://127.0.0.1:${env.PORT}`
       }
     ]
   },

@@ -1,4 +1,4 @@
-import env from './../config/callenv'
+import env from '../config/callenv'
 import {
   commitTrasaction,
   manageTransaction,
@@ -29,7 +29,7 @@ export const getAccessTokenService = async (): Promise<
   let status = Codes.errorServer
 
   try {
-    const secret = env.SECRET_KEY as string
+    const secret = env.SECRET_KEY
     const uid = new Date().getTime()
 
     const token = sign({ uid }, secret, { expiresIn: '1h' })

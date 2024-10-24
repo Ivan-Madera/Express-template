@@ -1,5 +1,5 @@
-import { Codes } from '../utils/CodeStatus'
 import env from '../config/callenv'
+import { Codes } from '../utils/CodeStatus'
 import { ErrorObject, ResponseMessage } from '../utils/JsonResponses'
 import { verify } from 'jsonwebtoken'
 
@@ -27,7 +27,7 @@ export const checkBearer = (req: any, res: any, next: any): any => {
 
   try {
     const auth = req.get('Authorization')
-    const secret = env.SECRET_KEY as string
+    const secret = env.SECRET_KEY
 
     if (!auth || !secret || !auth.startsWith('Bearer ')) {
       status = Codes.unauthorized
