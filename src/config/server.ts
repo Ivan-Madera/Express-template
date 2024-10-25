@@ -9,6 +9,7 @@ import { sequelize } from '../database/config'
 import helmet from 'helmet'
 import env from './callenv'
 import { LogInfo } from '../utils/Loggers'
+import { headerNoCache } from '../middlewares/authentication'
 
 class Server {
   public app: Application
@@ -26,14 +27,31 @@ class Server {
 
   configuration(): void {
     this.app.set('port', env.PORT)
+    this.app.use(helmet())
     this.app.use(helmet.xssFilter())
     this.app.use(helmet.noSniff())
     this.app.use(helmet.hidePoweredBy())
     this.app.use(helmet.frameguard({ action: 'deny' }))
+    this.app.use(
+      helmet.hsts({
+        maxAge: 63072000,
+        includeSubDomains: true,
+        preload: true
+      })
+    )
+    this.app.use(
+      helmet.contentSecurityPolicy({
+        directives: {
+          defaultSrc: ["'self'"],
+          frameAncestors: ["'none'"]
+        }
+      })
+    )
   }
 
   middlewares(): void {
     this.app.use(cors())
+    this.app.use(headerNoCache)
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
   }

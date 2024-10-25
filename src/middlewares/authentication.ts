@@ -3,6 +3,17 @@ import { Codes } from '../utils/CodeStatus'
 import { ErrorObject, ResponseMessage } from '../utils/JsonResponses'
 import { verify } from 'jsonwebtoken'
 
+export const headerNoCache = (_req: any, res: any, next: any): void => {
+  const status = Codes.errorServer
+
+  try {
+    res.setHeader('Cache-Control', 'no-store')
+    return next()
+  } catch (error) {
+    return res.status(status).json(ErrorObject(error, status))
+  }
+}
+
 export const checkAuth = (req: any, res: any, next: any): any => {
   let status = Codes.errorServer
   const message = 'No autorizado'
