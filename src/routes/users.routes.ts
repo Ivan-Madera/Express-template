@@ -20,9 +20,9 @@ const router = Router()
 
 /**
  * @swagger
- * /api/accesstoken:
+ * /api/v1/accesstoken:
  *   get:
- *     tags: [Users]
+ *     tags: ["[V1] Users"]
  *     summary: Obtener el accesstoken
  *     description: Obtiene el accesstoken para los endpoint.
  *     responses:
@@ -39,9 +39,9 @@ router.get('/accesstoken', [], getAccessToken)
 
 /**
  * @swagger
- * /api/users:
+ * /api/v1/users:
  *   get:
- *     tags: [Users]
+ *     tags: ["[V1] Users"]
  *     security:
  *     - bearerAuth: []
  *     summary: Obtener informacion de los usuarios
@@ -65,9 +65,9 @@ router.get('/users', [checkBearer], getUsers)
 
 /**
  * @swagger
- * /api/user:
+ * /api/v1/user:
  *   post:
- *     tags: [Users]
+ *     tags: ["[V1] Users"]
  *     summary: Crea un nuevo usuario
  *     parameters:
  *      - in: header
@@ -123,9 +123,9 @@ router.post('/user', [checkAuth], createUser)
 
 /**
  * @swagger
- * /api/user:
+ * /api/v1/user:
  *   patch:
- *     tags: [Users]
+ *     tags: ["[V1] Users"]
  *     summary: Actualiza un usuario existente
  *     parameters:
  *      - in: header

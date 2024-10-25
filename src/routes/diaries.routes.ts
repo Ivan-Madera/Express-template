@@ -5,9 +5,9 @@ const router = Router()
 
 /**
  * @swagger
- * /api/diaries:
+ * /api/v1/diaries:
  *   get:
- *     tags: [Diaries]
+ *     tags: ["[V1] Diaries"]
  *     summary: Obtener informacion de los viajes
  *     description: Obtiene la información relevante de los viajes.
  *     responses:
@@ -20,9 +20,9 @@ router.get('/diaries', [], diaries)
 
 /**
  * @swagger
- * /api/diaries:
+ * /api/v1/diaries:
  *   post:
- *     tags: [Diaries]
+ *     tags: ["[V1] Diaries"]
  *     summary: Crea una nuevo diario de viaje
  *     requestBody:
  *       required: true

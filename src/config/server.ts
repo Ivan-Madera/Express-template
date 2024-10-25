@@ -14,7 +14,7 @@ import { headerNoCache } from '../middlewares/authentication'
 class Server {
   public app: Application
   public service: Application
-  readonly pathV1 = '/api'
+  readonly pathV1 = '/api/v1'
 
   constructor() {
     this.app = express()
