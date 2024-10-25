@@ -4,7 +4,7 @@
   "description": "",
   "main": "./app.ts",
   "scripts": {
-    "tsc": "tsc",
+    "build": "tsc",
     "start": "node build/app.js",
     "dev": "ts-node-dev app.ts",
     "jest": "npx jest",
