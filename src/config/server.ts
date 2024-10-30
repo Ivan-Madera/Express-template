@@ -17,6 +17,7 @@ class Server {
   readonly pathV1 = '/api/v1'
 
   constructor() {
+    // file deepcode ignore UseCsurfForExpress
     this.app = express()
     this.service = this.app
     this.configuration()
