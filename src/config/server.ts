@@ -9,7 +9,7 @@ import { sequelize } from '../database/config'
 import helmet from 'helmet'
 import env from './callenv'
 import { LogInfo } from '../utils/Loggers'
-import { headerNoCache } from '../middlewares/authentication'
+import { headerNoCache } from '../middlewares/shared'
 
 class Server {
   public app: Application
@@ -71,6 +71,14 @@ class Server {
   }
 
   listen(): void {
+    this.app.get('/', (_req, res) => {
+      res.send(
+        `[${new Date().toLocaleString('es-MX', {
+          hour12: false
+        })}] | Servicio funcionando`
+      )
+    })
+
     this.app.listen(env.PORT, () => {
       LogInfo(`Server listening on http://127.0.0.1:${env.PORT}/docs`)
     })
