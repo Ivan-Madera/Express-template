@@ -1,15 +1,15 @@
 import express, { type Application } from 'express'
 import cors from 'cors'
-import Diaries from './../routes/diaries.routes'
-import Users from './../routes/users.routes'
+import { Diaries } from '../routes/diary.routes'
+import { Users } from '../routes/user.routes'
 import swaggerUI from 'swagger-ui-express'
 import swaggerJSDoc from 'swagger-jsdoc'
 import { options } from './swagger'
 import { sequelize } from '../database/config'
 import helmet from 'helmet'
-import env from './callenv'
-import { LogInfo } from '../utils/Loggers'
-import { headerNoCache } from '../middlewares/shared'
+import env from './callEnv'
+import { LogInfo } from '../utils/logger'
+import { headerNoCache } from '../middlewares/shared.middleware'
 
 class Server {
   public app: Application

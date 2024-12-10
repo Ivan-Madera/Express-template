@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { diaries, diariesCreate } from '../controllers/diaries.controller'
-import { diariesCreateValidator } from '../validators/diaries.validators'
+import { diaries, diariesCreate } from '../controllers/diary.controller'
+import { diariesCreateValidator } from '../validators/diary.validator'
 const router = Router()
 
 /**
@@ -52,4 +52,4 @@ router.get('/diaries', [], diaries)
  */
 router.post('/diaries', [...diariesCreateValidator], diariesCreate)
 
-export default router
+export { router as Diaries }

@@ -1,26 +1,26 @@
-import env from '../config/callenv'
+import env from '../config/callEnv'
 import {
   commitTransaction,
   manageTransaction,
   rollbackTransaction
-} from '../database/transactions'
+} from '../database/transaction'
 import {
   type IResponseMessage,
   type IErrorObject,
   type ISuccessObject
-} from '../interfaces/jsonResponses.dtos'
-import { type IUserObj } from '../interfaces/user.dtos'
+} from '../entities/jsonResponses.entity'
+import { type IUserObj } from '../entities/user.entity'
 import {
   createUser,
   updateUser
-} from '../repositories/mutations/user.mutations'
-import { findAllUsers } from '../repositories/queries/user.queries'
-import { Codes } from '../utils/CodeStatus'
+} from '../repositories/mutations/user.mutation'
+import { findAllUsers } from '../repositories/queries/user.query'
+import { Codes } from '../utils/codeStatus'
 import {
   ErrorObject,
   ResponseMessage,
   SuccessObject
-} from '../utils/JsonResponses'
+} from '../utils/jsonResponses'
 import { sign } from 'jsonwebtoken'
 
 export const getAccessTokenService = async (): Promise<

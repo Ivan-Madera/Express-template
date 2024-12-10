@@ -1,5 +1,5 @@
-import { Codes } from '../utils/CodeStatus'
-import { ErrorObject } from '../utils/JsonResponses'
+import { Codes } from '../utils/codeStatus'
+import { ErrorObject } from '../utils/jsonResponses'
 
 export const headerNoCache = (_req: any, res: any, next: any): void => {
   const status = Codes.errorServer

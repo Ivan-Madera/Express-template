@@ -4,8 +4,12 @@ import {
   getAccessToken,
   getUsers,
   updateUser
-} from '../controllers/users.controller'
-import { checkAuth, checkBearer } from '../middlewares/authentication'
+} from '../controllers/user.controller'
+import {
+  checkAuth,
+  checkBearer
+} from '../middlewares/authentication.middleware'
+
 const router = Router()
 
 /**
@@ -158,4 +162,4 @@ router.post('/user', [checkAuth], createUser)
  */
 router.patch('/user', [checkAuth], updateUser)
 
-export default router
+export { router as Users }

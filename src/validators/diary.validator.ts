@@ -1,5 +1,5 @@
 import { body } from 'express-validator'
-import { validateResult } from '../middlewares/validation'
+import { validateResult } from '../middlewares/validation.middleware'
 
 export const diariesCreateValidator = [
   body('date').notEmpty().isString().isDate(),

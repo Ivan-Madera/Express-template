@@ -3,7 +3,7 @@ import {
   type IErrorObject,
   type ISuccessObject,
   type IErrorValidator
-} from '../interfaces/jsonResponses.dtos'
+} from '../entities/jsonResponses.entity'
 
 export const ErrorObject = (error: any, code: number): IErrorObject => ({
   message: error.message,
