@@ -8,7 +8,7 @@ import { options } from './swagger'
 import { sequelize } from '../database/config'
 import helmet from 'helmet'
 import env from './callEnv'
-import { LogInfo } from '../utils/logger'
+import { LogInfo } from '../utils/Logger'
 import { headerNoCache } from '../middlewares/shared.middleware'
 
 class Server {
