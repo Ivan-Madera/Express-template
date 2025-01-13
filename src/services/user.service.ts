@@ -10,10 +10,7 @@ import {
   type ISuccessObject
 } from '../entities/jsonResponses.entity'
 import { type IUserObj } from '../entities/user.entity'
-import {
-  createUser,
-  updateUser
-} from '../repositories/mutations/user.mutation'
+import { createUser, updateUser } from '../repositories/mutations/user.mutation'
 import { findAllUsers } from '../repositories/queries/user.query'
 import { Codes } from '../utils/codeStatus'
 import {

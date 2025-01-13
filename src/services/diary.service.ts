@@ -2,7 +2,7 @@ import {
   type INewDiaryEntry,
   type IDiaryObject
 } from '../entities/diary.entity'
-import diariesData from '../json/diaries.json'
+import diariesData from '../json/diary.json'
 
 export const getDiaries = (): IDiaryObject[] => diariesData as IDiaryObject[]
 
