@@ -15,12 +15,12 @@ import {
   updateUser
 } from '../repositories/mutations/user.mutations'
 import { findAllUsers } from '../repositories/queries/user.queries'
-import { Codes } from '../utils/CodesStatus'
+import { Codes } from '../utils/CodeStatus'
 import {
   ErrorObject,
   ResponseMessage,
   SuccessObject
-} from '../utils/JsonsResponses'
+} from '../utils/JsonResponses'
 import { sign } from 'jsonwebtoken'
 
 export const getAccessTokenService = async (): Promise<

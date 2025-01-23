@@ -1,6 +1,6 @@
 import { validationResult } from 'express-validator'
-import { Codes } from '../utils/CodesStatus'
-import { ErrorValidator } from '../utils/JsonsResponses'
+import { Codes } from '../utils/CodeStatus'
+import { ErrorValidator } from '../utils/JsonResponses'
 
 export const validateResult = (req: any, res: any, next: any): any => {
   try {

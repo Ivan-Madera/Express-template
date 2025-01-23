@@ -5,8 +5,8 @@ import {
   getUsersService,
   updateUserService
 } from '../services/users.service'
-import { Codes } from '../utils/CodesStatus'
-import { ErrorObject } from '../utils/JsonsResponses'
+import { Codes } from '../utils/CodeStatus'
+import { ErrorObject } from '../utils/JsonResponses'
 
 export const getAccessToken: Handler = async (req, res) => {
   let status = Codes.errorServer
