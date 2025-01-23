@@ -1,7 +1,7 @@
 import { type Handler } from 'express'
-import { createDiaries, getDiaries } from '../services/diary.service'
-import { Codes } from '../utils/codeStatus'
-import { ErrorObject } from '../utils/jsonResponses'
+import { createDiaries, getDiaries } from '../services/diaries.service'
+import { Codes } from '../utils/CodesStatus'
+import { ErrorObject } from '../utils/JsonsResponses'
 
 export const diaries: Handler = (req, res) => {
   return res.send(getDiaries())

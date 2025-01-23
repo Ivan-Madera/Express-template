@@ -1,6 +1,6 @@
 import env from '../config/callEnv'
-import { Codes } from '../utils/codeStatus'
-import { ErrorObject, ResponseMessage } from '../utils/jsonResponses'
+import { Codes } from '../utils/CodesStatus'
+import { ErrorObject, ResponseMessage } from '../utils/JsonsResponses'
 import { verify } from 'jsonwebtoken'
 
 export const checkAuth = (req: any, res: any, next: any): any => {

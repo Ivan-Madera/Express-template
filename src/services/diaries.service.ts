@@ -1,8 +1,8 @@
 import {
   type INewDiaryEntry,
   type IDiaryObject
-} from '../entities/diary.entity'
-import diariesData from '../json/diary.json'
+} from '../entities/diaries.entities'
+import diariesData from '../json/diaries.json'
 
 export const getDiaries = (): IDiaryObject[] => diariesData as IDiaryObject[]
 

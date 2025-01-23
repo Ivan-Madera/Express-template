@@ -8,16 +8,19 @@ import {
   type IResponseMessage,
   type IErrorObject,
   type ISuccessObject
-} from '../entities/jsonResponses.entity'
-import { type IUserObj } from '../entities/user.entity'
-import { createUser, updateUser } from '../repositories/mutations/user.mutation'
-import { findAllUsers } from '../repositories/queries/user.query'
-import { Codes } from '../utils/codeStatus'
+} from '../entities/jsonResponses.entities'
+import { type IUserObj } from '../entities/users.entities'
+import {
+  createUser,
+  updateUser
+} from '../repositories/mutations/user.mutations'
+import { findAllUsers } from '../repositories/queries/user.queries'
+import { Codes } from '../utils/CodesStatus'
 import {
   ErrorObject,
   ResponseMessage,
   SuccessObject
-} from '../utils/jsonResponses'
+} from '../utils/JsonsResponses'
 import { sign } from 'jsonwebtoken'
 
 export const getAccessTokenService = async (): Promise<

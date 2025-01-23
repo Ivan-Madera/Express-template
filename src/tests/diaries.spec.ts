@@ -1,5 +1,5 @@
 import { server } from '../config/server'
-import { Codes } from '../utils/codeStatus'
+import { Codes } from '../utils/CodesStatus'
 import request from 'supertest'
 
 afterAll(async () => {
