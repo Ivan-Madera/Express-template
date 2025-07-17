@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
 import env from '../config/callEnv'
-import { LogError, LogInfo, LogMark } from '../utils/Logger'
+import { LogError, LogInfo, LogMark } from '../utils/logger'
 
 const dbPort = env.DB_PORT
 const MAX_CONNECTION = env.MAX_CONNECTION

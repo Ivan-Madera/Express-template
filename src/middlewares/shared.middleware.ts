@@ -1,5 +1,5 @@
-import { Codes } from '../utils/CodeStatus'
-import { ErrorObject } from '../utils/JsonResponses'
+import { Codes } from '../utils/codeStatus'
+import { ErrorObject } from '../utils/jsonResponses'
 
 export const baseRoute = (_req: any, res: any, _next: any): void => {
   return res.send(`
