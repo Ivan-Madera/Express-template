@@ -9,6 +9,6 @@ export const validateResult = (req: any, res: any, next: any): any => {
   } catch (error: any) {
     res
       .status(Codes.badRequest)
-      .json(ErrorValidator(error.array(), Codes.badRequest))
+      .json(ErrorValidator(error.array(), Codes.unprocessableContent))
   }
 }

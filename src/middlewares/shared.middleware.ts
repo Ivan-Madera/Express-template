@@ -1,6 +1,22 @@
 import { Codes } from '../utils/CodeStatus'
 import { ErrorObject } from '../utils/JsonResponses'
 
+export const baseRoute = (_req: any, res: any, _next: any): void => {
+  return res.send(`
+    <h1
+      style="
+        text-align: center;
+        color: #4CAF50;
+        font-family: Arial,
+        sans-serif; font-size: 36px;
+        background-color: #e8f5e9;
+        padding: 20px; border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    ">
+      ¡El servicio está funcionando correctamente! 🎉
+    </h1>`)
+}
+
 export const headerNoCache = (_req: any, res: any, next: any): void => {
   const status = Codes.errorServer
 
